@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sequences>
+	<command>
+		<robot>A2</robot>
+		<offon>On</offon>
+		<speed>High</speed>
+		<horizontal>CounterClockwise</horizontal>
+		<vertical>Up</vertical>
+		<time>231</time>
+	</command>
+	<command>
+		<robot>A3</robot>
+		<offon>On</offon>
+		<speed>High</speed>
+		<horizontal>CounterClockwise</horizontal>
+		<vertical>Up</vertical>
+		<time>206</time>
+	</command>
+	<command>
+		<robot>A2</robot>
+		<offon>On</offon>
+		<speed>Low</speed>
+		<horizontal>Clockwise</horizontal>
+		<vertical>Up</vertical>
+		<time>5</time>
+	</command>
+</sequences>
