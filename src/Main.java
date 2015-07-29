@@ -18,8 +18,8 @@ public class Main
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {
 
-        //testRobotRun();
-        robotRun();
+       testRobotRun();
+        //robotRun();
     }
     public static void testRobotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {
