@@ -6,16 +6,26 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.*;
 
+/**
+ * This class takes a LinkedBlockingQueue from the Producer Class, decodes
+ * and runs the commands as it pulls the commands off the queue.
+ */
 class Consumer implements Runnable
 {
     LinkedBlockingQueue<BitSet> queue;
     ArrayList<BitSet> list = new ArrayList<>();
-    Consumer(LinkedBlockingQueue<BitSet> queue, ArrayList<BitSet> list) throws InterruptedException
+
+    public Consumer(LinkedBlockingQueue<BitSet> queue, ArrayList<BitSet> list)
     {
         this.queue = queue;
         this.list = list;
         new Thread(this).start();
     }
+
+    /**
+     * This takes the command off the queue and sends it to the
+     * robotWork method
+     */
     public void run()
     { int len = queue.size();
         for (int i = 0; i < len; i++)
@@ -30,6 +40,12 @@ class Consumer implements Runnable
           }
         }
     }
+
+    /**
+     * The execution of the robot arm commands. This decodes the bitset and calls the
+     * command
+     * @param: BitSet bitSet
+     */
     public void robotWork (BitSet bitSet)
     {
         try
@@ -49,6 +65,7 @@ class Consumer implements Runnable
             if (bitSet.get(8)){ System.out.println("Direction: Up");}
             else {System.out.println("Direction: Down");}
 
+            // decodes the BitSet and puts the thread to sleep for the ascribed time period
             BitSet timeBS = new BitSet();
             timeBS = bitSet.get(9, 17);
             int value = 0;for (int k = 0; k<9; ++k)

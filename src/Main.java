@@ -17,9 +17,9 @@ public class Main
 {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {
-
-       testRobotRun();
-        //robotRun();
+        robotRun();
+        // runs a truncated xmLFile for testing purposes
+        // testRobotRun();
     }
     public static void testRobotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {

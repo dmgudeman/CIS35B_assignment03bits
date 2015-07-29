@@ -120,8 +120,8 @@ public class XMLReader
      *
      * The number of milliseconds are in BitSet(9,17)
      *
-     * @param list
-     * @return
+     * @param: ArrayList<String[]> list
+     * @return: ArrayList<BitSet>
      */
 
     public ArrayList<BitSet> setBits(ArrayList<String[]> list)
@@ -144,11 +144,13 @@ public class XMLReader
                 if (list.get(i)[3].equals("Clockwise")){ bitSet.set(7);}
                 if (list.get(i)[4].equals("Up")){ bitSet.set(8);}
 
-                temp = Long.parseLong(list.get(i)[5]);
+                // converting the milliseconds in String form to Integer
+                // then putting it into the BitSet
+                temp = Integer.parseInt(list.get(i)[5]);
                 int index = 9;
                 while (temp != 0)
                 {
-                    if (temp % 2L != 0)
+                    if (temp % 2 != 0)
                     {
                         bitSet.set(index);
                     }

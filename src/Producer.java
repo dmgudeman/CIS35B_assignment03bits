@@ -5,18 +5,20 @@ import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ *  Takes in an ArrayList<BitSet> and its purpose is to create
+ *  a blocking queue for the Consumer Class
+ */
 class Producer implements Runnable
 {
     LinkedBlockingQueue<BitSet> queue;
     ArrayList<BitSet> list = new ArrayList<>();
-    static int LENGTH = 0;
 
     Producer(LinkedBlockingQueue<BitSet> queue, ArrayList<BitSet> list) throws InterruptedException
     {
         this.queue = queue;
         this.list = list;
         new Thread(this).start();
-        LENGTH = list.size();
     }
 
     public void run()
@@ -25,6 +27,13 @@ class Producer implements Runnable
 
     }
 
+    /**
+     * Takes in a LinkedBlockingQueue and an ArrayList of BitSets and
+     * puts the BitSets into the LinkedBlockingQueue
+     * @param: LinkedBlockingQueue<BitSet> queue
+     * @param: ArrayList<BitSet> list
+     * @return: LinkedBlockingQueue<BitSet></BitSet>
+     */
     public LinkedBlockingQueue packTheQueue(LinkedBlockingQueue<BitSet> queue, ArrayList <BitSet> list)
     {
         try
