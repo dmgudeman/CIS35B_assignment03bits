@@ -44,7 +44,7 @@ class Producer implements Runnable
         }
         catch (NoSuchElementException g)
         {
-            System.out.println("no susch element exception");
+            System.out.println("no such element exception");
         }
         return queue;
     }

@@ -92,10 +92,7 @@ public class XMLReader
                     System.out.println("\n");
                 }
             }
-
             System.out.println("----------------------------");
-
-
         } catch (Exception e)
         {
             e.printStackTrace();
@@ -103,7 +100,6 @@ public class XMLReader
     }
 
     public ArrayList<String[]> getArrayList(NodeList list)
-
     {
         ArrayList<String[]> arrayList = new ArrayList<>();
         try
@@ -186,7 +182,7 @@ public class XMLReader
 
     }
 
-    public void showNode(NodeList nodeList, int index, String tagname)
+  /*  public void showNode(NodeList nodeList, int index, String tagname)
     {
         try
         {
@@ -208,10 +204,10 @@ public class XMLReader
         }
 
     }
+    */
 
     public ArrayList<BitSet> setBits(ArrayList<String[]> list)
     {
-        System.out.println("xmlREADER setBitssssssssssssssssssssssssssss FIRED");
         ArrayList<BitSet> BSlist = new ArrayList<>();
         try
         {
@@ -220,8 +216,6 @@ public class XMLReader
             for (int i = 0; i <=list.size()-1; i++)
             {
                 bitSet = new BitSet(16);
-             //   System.out.println("SSSSSSSSSSSSSSSSSSSSSSSTEP "+ i);
-             //   System.out.println("IN SHOWARRAYLIST LIST.SIZE() " + list.size());
                 if (list.get(i)[0].equals("A1")){ bitSet.set(1);}
                 else if (list.get(i)[0].equals("A2")){ bitSet.set(2);}
                 else if (list.get(i)[0].equals("A3")){ bitSet.set(3);}
@@ -244,40 +238,14 @@ public class XMLReader
                     ++index;
                     temp = temp >>> 1;
                 }
-             //   BitSet timeBS = new BitSet();
-             //   timeBS = bitSet.get(9, 17);
-           //     System.out.println("time BS = " + timeBS);
 
-
-
-
-                //IIIMMPPORTANT TO COLLECT THE TIME VALUE
-            //    System.out.println("bitSet.get(0, 5) " + bitSet.get(0, 4));
-            //    System.out.println("bitSet.get(5, 9) " + bitSet.get(5,9));
-             // System.out.println("bitSet.get(9, 17) " + bitSet.get(9, 17));
-               System.out.println("bitSet " + bitSet);
-               // System.out.println("AFTERRRRRRRRRRRRRRRRRRRRR bitSet(9, 17)" + bitSet.get(9, 17));
-           //     long value = 0L;for (int k = 0; k<9; ++k)
-          //      {
-          //          value += timeBS.get(k) ? (1L << k) : 0L;
-           //     }
-
-           //     System.out.println("value " + value);
                 BSlist.add(i, bitSet);
-                System.out.println("BSlist ttttttttt "+ BSlist + "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-
-             //  bitSet.clear();
-
             }
-
-            System.out.println("----------------------------");
-
-
-        } catch (Exception e)
+        }
+        catch (Exception e)
         {
             e.printStackTrace();
         }
-        System.out.println("BSList oooooooooooooooo " + BSlist);
         return BSlist;
     }
 
