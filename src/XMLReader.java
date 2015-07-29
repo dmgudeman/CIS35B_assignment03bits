@@ -135,7 +135,7 @@ public class XMLReader
         return arrayList;
     }
 
-    public void showArrayList(ArrayList<String[]> list)
+ /*   public void showArrayList(ArrayList<String[]> list)
     {
         System.out.println("THIS IS HERE");
         try
@@ -162,7 +162,8 @@ public class XMLReader
         }
 
     }
-    public void showQueue(LinkedBlockingQueue<String[]> queue)
+    */
+ /*   public void showQueue(LinkedBlockingQueue<String[]> queue)
     {
         System.out.println("SHOW QUEUE STARTED queue.size() = " + queue.size());
         try
@@ -181,7 +182,7 @@ public class XMLReader
         }
 
     }
-
+*/
   /*  public void showNode(NodeList nodeList, int index, String tagname)
     {
         try
