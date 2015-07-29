@@ -69,6 +69,13 @@ public class XMLReader
         return nList;
     }
 
+    /**
+     * This method takes in a NodeList, extracts the nodes, creates
+     * a String[] of nodes, packs the array into an ArrayList and
+     * Returns the List
+     * @param: NodeList list
+     * @return: ArrayList<String[]>
+     */
     public ArrayList<String[]> getArrayList(NodeList list)
     {
         ArrayList<String[]> arrayList = new ArrayList<>();
@@ -105,7 +112,17 @@ public class XMLReader
         return arrayList;
     }
 
-
+    /**
+     * This method takes in an ArrayList<String[]> that represents the robot arm commands.
+     *
+     * It extracts the name of the robot arm in BitSet(0,5). The boolean commands in the next
+     * 4 bits: onOff=BitSet(5), Speed=BitSet(6), Horizontal=BitSet(7), Vertical=BitSet(8).
+     *
+     * The number of milliseconds are in BitSet(9,17)
+     *
+     * @param list
+     * @return
+     */
 
     public ArrayList<BitSet> setBits(ArrayList<String[]> list)
     {
