@@ -69,36 +69,6 @@ public class XMLReader
         return nList;
     }
 
-    public void showNodeList(NodeList nodeList)
-    {
-        int j = 0;
-        try
-        {
-            for (int i = 0; i < nodeList.getLength(); i++)
-            {
-                Node child = nodeList.item(i);
-                if (child.getNodeType() == Node.ELEMENT_NODE)
-                {
-
-                    Element eElement = (Element) child;
-
-                    System.out.println("Command number: " + i);
-                    System.out.println("robot: " + eElement.getElementsByTagName("robot").item(0).getTextContent());
-                    System.out.println("offon: " + eElement.getElementsByTagName("offon").item(0).getTextContent());
-                    System.out.println("speed: " + eElement.getElementsByTagName("speed").item(0).getTextContent());
-                    System.out.println("horizontal: " + eElement.getElementsByTagName("horizontal").item(0).getTextContent());
-                    System.out.println("vertical: " + eElement.getElementsByTagName("vertical").item(0).getTextContent());
-                    System.out.println("time: " + eElement.getElementsByTagName("time").item(0).getTextContent());
-                    System.out.println("\n");
-                }
-            }
-            System.out.println("----------------------------");
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
-
     public ArrayList<String[]> getArrayList(NodeList list)
     {
         ArrayList<String[]> arrayList = new ArrayList<>();
@@ -135,77 +105,7 @@ public class XMLReader
         return arrayList;
     }
 
- /*   public void showArrayList(ArrayList<String[]> list)
-    {
-        System.out.println("THIS IS HERE");
-        try
-        {
-            for (int i = 0; i <=list.size()-1; i++)
-            {
-                System.out.println("SSSSSSSSSSSSSSSSSSSSSSSTEP "+ i);
-                System.out.println("IN SHOWARRAYLIST LIST.SIZE() " + list.size());
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + list.get(i)[0]);
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + list.get(i)[1]);
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + list.get(i)[2]);
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + list.get(i)[3]);
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + list.get(i)[4]);
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + list.get(i)[5]);
-                System.out.println("vvvvvvvvvvvvvvvvvvvvvvv" + "\n");
-            }
 
-            System.out.println("----------------------------");
-
-
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-    }
-    */
- /*   public void showQueue(LinkedBlockingQueue<String[]> queue)
-    {
-        System.out.println("SHOW QUEUE STARTED queue.size() = " + queue.size());
-        try
-        {
-            for (int i = 0; i < 1000; i++)
-            {
-                System.out.println("mlReader.showQueue " + queue.take()[0] + "iiiiiii = " + i + "QUEUE.SIZE " + queue.size());
-            }
-
-            System.out.println("----------------------------");
-
-
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-    }
-*/
-  /*  public void showNode(NodeList nodeList, int index, String tagname)
-    {
-        try
-        {
-            Node child = nodeList.item(index);
-            if (child.getNodeType() == Node.ELEMENT_NODE)
-            {
-                Element eElement = (Element) child;
-                if (eElement.getElementsByTagName(tagname) != null)
-
-                    System.out.println(tagname + " : " + eElement.getElementsByTagName(tagname).item(0).getTextContent());
-            }
-
-            System.out.println("------------*****************----------------");
-
-
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
-    }
-    */
 
     public ArrayList<BitSet> setBits(ArrayList<String[]> list)
     {
@@ -227,7 +127,6 @@ public class XMLReader
                 if (list.get(i)[3].equals("Clockwise")){ bitSet.set(7);}
                 if (list.get(i)[4].equals("Up")){ bitSet.set(8);}
 
-                System.out.println("BEFORE     bitSet " + bitSet);
                 temp = Long.parseLong(list.get(i)[5]);
                 int index = 9;
                 while (temp != 0)
