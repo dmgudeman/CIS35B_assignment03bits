@@ -11,30 +11,20 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Created by davidgudeman on 7/22/15.
+ * CIS35B_assignment03 - implemented with BitSets
+ * Use threads to control 4 robot arms that share one motor
+ *
+ * July 28, 2015
+ * David M. Gudeman
  */
 public class Main
 {
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {
         robotRun();
-        // runs a truncated xmLFile for testing purposes
-        // testRobotRun();
-    }
-    public static void testRobotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
-    {
-        LinkedBlockingQueue<BitSet> queue = new LinkedBlockingQueue<>();
 
-        String sfile = "/Users/davidgudeman/Documents/workspace/CIS35B_assignment03/src/testRobotData.xml";
-        XMLReader xmlReader = new XMLReader(sfile);
-        Document doc = xmlReader.ReadXML();
-        NodeList nodeList = xmlReader.GetNodes(doc);
-        ArrayList<String[]> aList = xmlReader.getArrayList(nodeList);
-        ArrayList<BitSet> BSlist = xmlReader.setBits(aList);
-
-        Producer producer = new Producer(queue, BSlist);
-        new Consumer(producer.queue, BSlist);
     }
+
     public static void robotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {
         LinkedBlockingQueue<BitSet> queue = new LinkedBlockingQueue<>();
