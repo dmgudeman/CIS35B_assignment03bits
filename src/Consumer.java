@@ -10,74 +10,31 @@ class Consumer implements Runnable
 {
     LinkedBlockingQueue<BitSet> queue;
     ArrayList<BitSet> list = new ArrayList<>();
-   // CommandEnumerationTask task = new CommandEnumerationTask(queue, list);
-
     Consumer(LinkedBlockingQueue<BitSet> queue, ArrayList<BitSet> list) throws InterruptedException
     {
         this.queue = queue;
         this.list = list;
-
-
-
         new Thread(this).start();
     }
     public void run()
     { int len = queue.size();
         for (int i = 0; i < len; i++)
         {
-          try {
-             /*   String sparky = queue.element()[0];
-                if(sparky.equals("A1"))
-                {
-                    System.out.println("\n");
-                    System.out.println("COMMAND NUMBER: "+ i);
-                    robotWork(queue.remove());
-                   // queue.remove(i);
-                }
-                else if (sparky.equals("A2"))
-                {
-                    System.out.println("\n");
-                    System.out.println("COMMAND NUMBER: "+ i);
-                    robotWork(queue.remove());
-                   // queue.remove(i);
-                }
-                else if (sparky.equals("A3"))
-                {
-                    System.out.println("\n");
-                    System.out.println("COMMAND NUMBER: "+ i);
-                    robotWork(queue.remove());
-                  //  queue.remove(i);
-                }
-                else if (sparky.equals("A4"))
-                {
-                    System.out.println("\n");
-                    System.out.println("COMMAND NUMBER: "+ i );
-                    robotWork(queue.remove());
-                   // queue.remove(i);
-                }
-                else
-               {
-                    System.out.println("\n");
-                    System.out.println("COMMAND NUMBER: "+ i + "Command not found: " + queue.remove()[0]);
-
-               }
-             */
-
-           // } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-         //       e.printStackTrace();
+          try
+          {
               robotWork(queue.remove());
-          }catch (NoSuchElementException f)
-            {
-                System.out.println("");
-            }
+          }
+          catch (NoSuchElementException f)
+          {
+              System.out.println("No such element exception");
+          }
         }
     }
     public void robotWork (BitSet bitSet)
     {
         try
         {
-            System.out.println("Robot arm number" +  bitSet.get(0, 4) + " is working.");
+            System.out.println("Robot arm number" +  bitSet.get(0, 5) + " is working.");
 
             if (bitSet.get(5)){ System.out.println("State: ON");}
             else { System.out.println("State: Off");}
@@ -107,12 +64,6 @@ class Consumer implements Runnable
         {
             System.out.println("Interrupted Exception caught");
         }
-
-      //      System.out.println("bitSet.get(5, 9) " + bitSet.get(5,9));
-       //     System.out.println("bitSet.get(9, 17) " + bitSet.get(9, 17));
-        //    System.out.println("bitSet " + bitSet);
-          //  System.out.println("Sleeping " + command[5] + "milliseconds");
-         //   Thread.sleep(Integer.parseInt(command[5]));
     }
 
 }

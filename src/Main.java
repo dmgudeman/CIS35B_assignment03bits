@@ -25,7 +25,7 @@ public class Main
     {
         LinkedBlockingQueue<BitSet> queue = new LinkedBlockingQueue<>();
 
-        String sfile = "/Users/davidgudeman/Documents/workspace/CIS35B_assignment03/src/TestRobotData.xml";
+        String sfile = "/Users/davidgudeman/Documents/workspace/CIS35B_assignment03/src/RobotData.xml";
         XMLReader xmlReader = new XMLReader(sfile);
         Document doc = xmlReader.ReadXML();
         NodeList nodeList = xmlReader.GetNodes(doc);
