@@ -21,20 +21,7 @@ public class Main
         // runs a truncated xmLFile for testing purposes
         // testRobotRun();
     }
-    public static void testRobotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
-    {
-        LinkedBlockingQueue<BitSet> queue = new LinkedBlockingQueue<>();
 
-        String sfile = "/Users/davidgudeman/Documents/workspace/CIS35B_assignment03/src/testRobotData.xml";
-        XMLReader xmlReader = new XMLReader(sfile);
-        Document doc = xmlReader.ReadXML();
-        NodeList nodeList = xmlReader.GetNodes(doc);
-        ArrayList<String[]> aList = xmlReader.getArrayList(nodeList);
-        ArrayList<BitSet> BSlist = xmlReader.setBits(aList);
-
-        Producer producer = new Producer(queue, BSlist);
-        new Consumer(producer.queue, BSlist);
-    }
     public static void robotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
     {
         LinkedBlockingQueue<BitSet> queue = new LinkedBlockingQueue<>();
@@ -49,4 +36,20 @@ public class Main
         Producer producer = new Producer(queue, BSlist);
         new Consumer(producer.queue, BSlist);
     }
+
+    public static void testRobotRun() throws IOException, SAXException, ParserConfigurationException, InterruptedException
+    {
+        LinkedBlockingQueue<BitSet> queue = new LinkedBlockingQueue<>();
+
+        String sfile = "/Users/davidgudeman/Documents/workspace/CIS35B_assignment03/src/testRobotData.xml";
+        XMLReader xmlReader = new XMLReader(sfile);
+        Document doc = xmlReader.ReadXML();
+        NodeList nodeList = xmlReader.GetNodes(doc);
+        ArrayList<String[]> aList = xmlReader.getArrayList(nodeList);
+        ArrayList<BitSet> BSlist = xmlReader.setBits(aList);
+
+        Producer producer = new Producer(queue, BSlist);
+        new Consumer(producer.queue, BSlist);
+    }
+
 }
