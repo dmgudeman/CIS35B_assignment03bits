@@ -50,7 +50,7 @@ class Consumer implements Runnable
     {
         try
         {
-            System.out.println("Robot arm number" +  bitSet.get(0, 5) + " is working.");
+            System.out.println("Robot arm number " +  bitSet.get(0, 5) + " is working.");
 
             if (bitSet.get(5)){ System.out.println("State: ON");}
             else { System.out.println("State: Off");}
