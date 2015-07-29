@@ -73,22 +73,6 @@ class Producer implements Runnable
                 for (int i = 0;i<list.size();i++)
                 {
                     queue.put(this.list.get(i));
-
-                    System.out.println("IN THE PACKTHEQUEUEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-                    System.out.println("bitSet.get(0, 5) " + queue.element().get(0, 5));
-                    System.out.println("bitSet.get(5, 9) " + queue.element().get(5, 9));
-                    System.out.println("bitSet.get(9, 17) " + queue.element().get(9, 17));
-                    System.out.println("bitSet " + queue.element());//System.out.println("IN PRODCUER CONSTRUCTOR QUEUE.SIZE() = " + LENGTH);
-                    //  System.out.println("STEP i  in run in PRODUCER " + i);
-                    //  System.out.println("PRODUCER RUN QUEUE.SIZE =" + queue.size());
-                    //   System.out.println("QUEUE.ELEMENT[0] = " + queue.element()[0]);
-                    //    System.out.println("QUEUE.ELEMENT[1] = " + queue.element()[1]);
-                    //   System.out.println("QUEUE.ELEMENT[2] = " + queue.element()[2]);
-                    //   System.out.println("QUEUE.ELEMENT[3] = " + queue.element()[3]);
-                    //   System.out.println("QUEUE.ELEMENT[4] = " + queue.element()[4]);
-                    // System.out.println("QUEUE.ELEMENT[5] = " + queue.element()[5]);
-                    //   System.out.println("IN PRODCUER CONSTRUCTOR QUEUE.SIZE() = " + LENGTH);
-                    //   System.out.println("\n");
                 }
         }
         catch (InterruptedException e)
